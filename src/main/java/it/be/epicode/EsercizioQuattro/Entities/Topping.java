@@ -10,7 +10,6 @@ import java.util.List;
 @Getter
 @Setter
 @ToString
-@NoArgsConstructor
 public class Topping extends Common{
 
     @Id

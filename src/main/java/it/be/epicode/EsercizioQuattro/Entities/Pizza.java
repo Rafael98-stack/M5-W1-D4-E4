@@ -15,11 +15,10 @@ import java.util.List;
 @Getter
 @Setter
 @ToString
-@NoArgsConstructor
 public class Pizza extends Common{
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue
     @Setter(AccessLevel.NONE)
     private long Id;
 
@@ -29,6 +28,11 @@ public class Pizza extends Common{
     private List<Topping> toppings;
 
     public Pizza() {
+    }
+
+    public Pizza(String name, int price, int calorie) {
+        super(name, price);
+        this.calorie = calorie;
     }
 
     public Pizza(String name, int price, int calorie, List<Topping> toppings) {

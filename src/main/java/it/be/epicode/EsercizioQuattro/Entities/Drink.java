@@ -1,21 +1,23 @@
 package it.be.epicode.EsercizioQuattro.Entities;
 
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
 @Entity
 @Table(name = "drink")
-@Getter
+@NoArgsConstructor
 @Setter
 @ToString
-@NoArgsConstructor
-public class Drink  extends Common{
-
+@Getter
+public class Drink extends Common{
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Setter(AccessLevel.NONE)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long Id;
-
+    private String name;
+    private int price;
     private int calorie;
 
     public Drink(String name, int price, int calorie) {
